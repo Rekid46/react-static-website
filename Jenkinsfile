@@ -1,5 +1,9 @@
 pipeline {
-    agent slave1
+    agent {
+        ubuntu {
+            label slave1
+        }
+    }slave1
     stages {
         stage("Build") {
             steps {
