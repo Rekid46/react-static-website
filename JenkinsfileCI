@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage("Clear last Build") {
             steps {
-                sh "rm -r /home/jenkins/workspace/Frontend/build"
+                sh "rm -r /home/jenkins/workspace/FrontendCI/build"
             }
         }
         stage("NPM Install") {
