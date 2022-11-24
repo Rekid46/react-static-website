@@ -1,10 +1,12 @@
 pipeline {
-    agent slave1
+    agent {
+        label 'slave1'
+    }
     stages {
         stage("Deploy") {
             steps {
-                sh "sudo rm -r /var/www/html/frontend/*"
-                sh "sudo mv /home/jenkins/workspace/Frontend/build/* /var/www/html/frontend"
+                sh "rm -r /var/www/html/frontend/*"
+                sh "mv /home/jenkins/workspace/Frontend/build/* /var/www/html/frontend"
             }
         }
     }
