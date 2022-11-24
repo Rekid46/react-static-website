@@ -1,0 +1,15 @@
+pipeline {
+    agent slave1
+    stages {
+        stage("Clear last Build") {
+            steps {
+                sh "sudo rm -r /home/jenkins/workspace/Frontend/build"
+            }
+        }
+        stage("Creat Build") {
+            steps {
+                sh "sudo npm run build"
+            }
+        }       
+    }
+}
