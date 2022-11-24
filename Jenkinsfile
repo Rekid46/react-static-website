@@ -13,8 +13,8 @@ pipeline {
         }
         stage("Deploy") {
             steps {
-                sh "rm -r /var/www/html/frontend/*"
-                sh "mv /home/jenkins/workspace/Frontend/build/* /var/www/html/frontend"
+                sh "rm -r /var/www/html/*"
+                sh "mv /home/jenkins/workspace/Frontend/build/* /var/www/html/"
             }
         }
     }
