@@ -6,7 +6,7 @@ pipeline {
         stage("Deploy") {
             steps {
                 sh "rm -r /var/www/html/*"
-                sh "mv /home/jenkins/workspace/FrontendCI/build/* /var/www/html/frontend"
+                sh "mv /home/jenkins/workspace/FrontendCI/build/* /var/www/html/"
             }
         }
     }
