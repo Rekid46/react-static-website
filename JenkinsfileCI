@@ -8,6 +8,12 @@ pipeline {
                 sh "rm -r /home/jenkins/workspace/Frontend/build"
             }
         }
+        stage("NPM Install") {
+            steps {
+                sh "export NODE_OPTIONS=--max_old_space_size=8192"
+                sh "npm install --save --legacy-peer-deps"
+            }
+        }
         stage("Creat Build") {
             steps {
                 sh "npm run build"
